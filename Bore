@@ -46,8 +46,8 @@ local function digPlane(width,currentLevel)
 	if currentLevel == 1 then
 		if turtle.detect() then turtle.dig() end
 		turtle.forward()
-		width = width - 1
 	end
+	width = width - 1
 	dig(width)
 	turnRight()
 	while width>0 do

@@ -17,7 +17,6 @@ local function turnRight()
 	turtle.turnRight()
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
-	turtle.turnRight()
 end
 
 local function turnLeft()
@@ -25,7 +24,6 @@ local function turnLeft()
 	turtle.turnLeft()
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
-	turtle.turnLeft()
 end
 
 local function switchPlane()
@@ -105,6 +103,6 @@ print("=====================================")
 print("Executing Bore program .. ")
 print("=====================================")
 print()
-digBore(8,5)
+digBore(8,3)
 --
 ---------------------------------------------------------------

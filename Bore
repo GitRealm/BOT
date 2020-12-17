@@ -1,0 +1,104 @@
+---------------------------------------------------------------
+--
+-- Bore.lua
+-- Spiral excavation for a single turtle (8Lx8Wx5H)
+--
+---------------------------------------------------------------
+--
+--
+--
+---------------------------------------------------------------
+--
+-- Program Execution
+--
+print()
+print("=====================================")
+print("Executing Bore program .. ")
+print("Boring dimensions = 8Lx8Wx5H")
+print("=====================================")
+print()
+--
+---------------------------------------------------------------
+--
+-- Variables and Functions
+--
+
+boreLength = 8
+depth = 5
+
+local function turnRight()
+	print("		Turning right")
+	turtle.turnRight()
+	if turtle.detect() then turtle.dig() end
+	turtle.forward()
+	turtle.turnRight()
+end
+
+local function turnLeft()
+	print("		Turning left")
+	turtle.turnLeft()
+	if turtle.detect() then turtle.dig() end
+	turtle.forward()
+	turtle.turnLeft()
+end
+
+local function switchPlane()
+	print("Swiching levels")
+	turtle.turnRight()
+	turtle.turnRight()
+	if turtle.detectDown() then turtle.digDown() end
+	turtle.down()
+end
+
+local function dig(amount)
+	print("		Digging " .. amount .. " blocks")
+	for i=1, amount, 1 do
+		if turtle.detect() then turtle.dig() end
+		turtle.forward()
+	end
+end
+
+local function digPlane(width,currentLevel)
+	print()
+	print("Beginning excavation of level " .. currentLevel)
+	if currentLevel == 1 then
+		if turtle.detect() then turtle.dig() end
+		turtle.forward()
+		width = width - 1
+	end
+	dig(width)
+	while width>0 do
+		for a=1, 2, 1 do
+			for b=1, width, 1 do
+				digRow(width,b)
+				turnRight()
+			end
+		end
+		width = width - 1
+	end
+	print("Completed excavation of level " .. currentLevel)
+	print()
+	switchPlane()
+end
+
+local function digPlaneReverse(width,currentLevel)
+	local digAmount = 1
+	print()
+	print("Beginning reverse excavation of level " .. currentLevel)
+	while digAmount<width do
+		for a=1, 2, 1 do
+			for b=1, digAmount, 1 do
+				digRow(width,b)
+				turnLeft()
+			end
+		end
+		digAmount = digAmount + 1
+	end
+	dig(width)
+	print("Completed reverse excavation of level " .. currentLevel)
+	print()
+	switchPlane()
+end
+
+--
+---------------------------------------------------------------

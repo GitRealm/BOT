@@ -11,20 +11,18 @@
 --
 -- Program Execution
 --
+digBore(8,5)
 print()
 print("=====================================")
 print("Executing Bore program .. ")
-print("Boring dimensions = 8Lx8Wx5H")
 print("=====================================")
 print()
+
 --
 ---------------------------------------------------------------
 --
--- Variables and Functions
+-- Functions
 --
-
-boreLength = 8
-depth = 5
 
 local function turnRight()
 	print("		Turning right")
@@ -78,7 +76,6 @@ local function digPlane(width,currentLevel)
 	end
 	print("Completed excavation of level " .. currentLevel)
 	print()
-	switchPlane()
 end
 
 local function digPlaneReverse(width,currentLevel)
@@ -97,8 +94,16 @@ local function digPlaneReverse(width,currentLevel)
 	dig(width)
 	print("Completed reverse excavation of level " .. currentLevel)
 	print()
-	switchPlane()
 end
 
+local function digBore(width, depth)
+	print("Boring dimensions = " .. width .. "Lx" .. width .. "Wx" .. "depth" .. "H")
+	for i=1, depth, 1 do
+		if i%2 == 1 then digPlane(width,i)
+		else digPlaneReverse(width,i) end
+		if i == depth then return end
+		switchPlane()
+	end
+end
 --
 ---------------------------------------------------------------

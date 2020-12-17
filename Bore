@@ -74,8 +74,7 @@ local function digPlaneReverse(width,currentLevel)
 		end
 		digAmount = digAmount + 1
 	end
-	dig(width)
-	turnLeft()
+	dig(width-1)
 	print("Completed reverse excavation of level " .. currentLevel)
 	print()
 end

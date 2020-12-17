@@ -16,14 +16,12 @@ local function turnRight()
 	print("		Turning right")
 	turtle.turnRight()
 	if turtle.detect() then turtle.dig() end
-	turtle.forward()
 end
 
 local function turnLeft()
 	print("		Turning left")
 	turtle.turnLeft()
 	if turtle.detect() then turtle.dig() end
-	turtle.forward()
 end
 
 local function switchPlane()
@@ -54,10 +52,8 @@ local function digPlane(width,currentLevel)
 	turnRight()
 	while width>0 do
 		for a=1, 2, 1 do
-			for b=1, width, 1 do
-				dig(width)
-				turnRight()
-			end
+			dig(width)
+			turnRight()
 		end
 		width = width - 1
 	end

@@ -53,10 +53,11 @@ local function digPlane(width,currentLevel)
 		width = width - 1
 	end
 	dig(width)
+	turnRight()
 	while width>0 do
 		for a=1, 2, 1 do
 			for b=1, width, 1 do
-				digRow(width,b)
+				dig(width)
 				turnRight()
 			end
 		end
@@ -73,13 +74,14 @@ local function digPlaneReverse(width,currentLevel)
 	while digAmount<width do
 		for a=1, 2, 1 do
 			for b=1, digAmount, 1 do
-				digRow(width,b)
+				dig(width)
 				turnLeft()
 			end
 		end
 		digAmount = digAmount + 1
 	end
 	dig(width)
+	turnLeft()
 	print("Completed reverse excavation of level " .. currentLevel)
 	print()
 end

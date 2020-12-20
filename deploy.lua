@@ -69,6 +69,9 @@ end
 local function navigate(startX,startY,startZ)
 	local currX, currY, currZ = getPos()
 	
+	print("Current coordinates: " .. currX .. " " currY .. " " .. currZ)
+	print("Navigating to: " .. startX .. " " startY .. " " .. startZ)
+	
 	if currX ~= startX then
 		distance = currX - startX
 		if distance > 0 then orient("positiveX") else orient("negativeX") end

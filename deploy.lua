@@ -36,18 +36,18 @@ local function getOrientation()
 	direction = "Undetermined"
 
 	if x2-x1 ~= 0 then
-		if x2-x1 < 0 then direction = "positiveX"
-		else direction = "negativeX"
+		if x2-x1 < 0 then direction = "negativeX"
+		else direction = "positiveX"
 		end
 
 	elseif y2-y1 ~= 0 then
-		if y2-y1 < 0 then direction = "positiveY"
-		else direction = "negativeY"
+		if y2-y1 < 0 then direction = "negativeZ"
+		else direction = "positiveY"
 		end
 
 	elseif z2-z1 ~= 0 then
-		if z2-z1 < 0 then direction = "positiveZ"
-		else direction = "negativeZ"
+		if z2-z1 < 0 then direction = "negativeZ"
+		else direction = "positiveZ"
 		end
 	end
 

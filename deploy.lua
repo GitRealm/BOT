@@ -103,5 +103,5 @@ end
 
 startX,startY,startZ = getPos()
 getOrientation()
-navigate(startPos)
+navigate(startX,startY,startZ)
 orient("positiveZ")

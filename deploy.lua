@@ -92,6 +92,7 @@ local function navigate(startX,startY,startZ)
 		while distance ~= 0 do
 
 		end
+	end
 
 
 end

@@ -30,9 +30,15 @@ local function navigate(x,y,z,direction)
 end
 
 local function orient()
+	print("Orienting self!")
+	print("		Fetching reference coordinates")
+	print("-------------------------------------")
 	local x1,y1,z1 = savePos()
+
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
+	print("		Fetching updated coordinates")
+	print("-------------------------------------")
 	local x2,y2,z2 = savePos()
 	direction = "Undetermined"
 
@@ -71,8 +77,12 @@ local function orient()
 		end
 	end
 
-	print(direction)
-
+	if direction ~= "Undetermined" then
+		print("		Direction determined!")
+		print("Facing " .. direction)
+	else
+		print("Could not orient!")
+	end
 end
 ---------------------------------------------------------------
 --

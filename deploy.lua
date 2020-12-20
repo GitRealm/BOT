@@ -18,4 +18,5 @@ end
 
 local function savePos()
 	local x,y,z = gps.locate()
+	print(x,y,z)
 end

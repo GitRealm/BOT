@@ -5,7 +5,13 @@
 --
 ---------------------------------------------------------------
 --
---
+-- turnRight()				Orient the turtle right
+-- turnLeft()				Orient the turtle left
+-- switchPlane()			Turn around and move down one level
+-- dig(amount)				Dig forward $amount blocks
+-- digPlane(width, currentLevel)	Dig plane $width x $width blocks (L2R Spiral)
+-- digPlaneReverse(width, currentLevel) Dig plane $width x $width blocks (R2L Spiral)
+-- digBore(width, depth) 		Dig hole $width x $width x $depth
 --
 ---------------------------------------------------------------
 --

@@ -22,6 +22,7 @@ local function savePos()
 	y = math.floor(y)
 	z = math.floor(z)
 	print(x,y,z)
+	return(x,y,z)
 end
 
 local function navigate(x,y,z,direction)
@@ -29,12 +30,10 @@ local function navigate(x,y,z,direction)
 end
 
 local function orient()
-	local x,y,z = gps.locate()
-	print(x,y,z)
+	local x1,y1,z1 = savePos()
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
-	local x2,y2,z2 = gps.locate()
-	print(x2,y2,z2)
+	local x2,y2,z2 = savePos()
 	direction = "Undetermined"
 
 	if x2-x ~= 0 then

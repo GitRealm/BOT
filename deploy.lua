@@ -21,7 +21,6 @@ local function savePos()
 	x = math.floor(x)
 	y = math.floor(y)
 	z = math.floor(z)
-	print(x,y,z)
 	return x,y,z
 end
 
@@ -34,12 +33,14 @@ local function orient()
 	print("		Fetching reference coordinates")
 	print("-------------------------------------")
 	local x1,y1,z1 = savePos()
+	print("		Reference coordinates = " .. x1 .. y1 .. z1)
 
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
 	print("		Fetching updated coordinates")
 	print("-------------------------------------")
 	local x2,y2,z2 = savePos()
+	print("		Updated coordinates = " .. x2 .. y2 .. z2)
 	direction = "Undetermined"
 
 	if x2-x1 ~= 0 then
@@ -79,10 +80,11 @@ local function orient()
 
 	if direction ~= "Undetermined" then
 		print("		Direction determined!")
-		print("Facing " .. direction)
+		print("Currently facing " .. direction)
 	else
 		print("Could not orient!")
 	end
+	return direction
 end
 ---------------------------------------------------------------
 --

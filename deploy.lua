@@ -91,6 +91,8 @@ local function navigate(startX,startY,startZ)
 		distance = currX - startX
 		while distance ~= 0 do
 
+		end
+
 
 end
 ---------------------------------------------------------------

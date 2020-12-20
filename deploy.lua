@@ -79,7 +79,7 @@ local function getOrientation()
 end
 
 local function orient(direction)
-	while getOrientation ~= direction do
+	while getOrientation() ~= direction do
 		turtle.turnLeft()
 	end
 end
@@ -103,5 +103,4 @@ end
 
 startX,startY,startZ = getPos()
 getOrientation()
-navigate(startX,startY,startZ)
 orient("positiveZ")

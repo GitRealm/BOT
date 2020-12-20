@@ -16,7 +16,7 @@ local function calculate(chunks)
 	return numTurtles
 end
 
-local function savePos()
+local function getPos()
 	local x,y,z = gps.locate()
 	x = math.floor(x)
 	y = math.floor(y)
@@ -24,18 +24,14 @@ local function savePos()
 	return x,y,z
 end
 
-local function navigate(x,y,z,direction)
-
-end
-
-local function orient()
-	print("Orienting self!")
-	local x1,y1,z1 = savePos()
+local function getOrientation()
+	print("Trying to get orientation!")
+	local x1,y1,z1 = getPos()
 	print("		Reference coordinates = " .. x1 .. y1 .. z1)
 
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
-	local x2,y2,z2 = savePos()
+	local x2,y2,z2 = getPos()
 	print("		Updated coordinates = " .. x2 .. y2 .. z2)
 	direction = "Undetermined"
 
@@ -50,7 +46,6 @@ local function orient()
 			end
 		end
 
-	
 	elseif y2-y1 ~= 0 then
 		if y2 > 0 or y1 > 0 then
 			if y2-y1 <0 then direction = "positiveY"
@@ -78,14 +73,32 @@ local function orient()
 		print("		Direction determined!")
 		print("Currently facing " .. direction)
 	else
-		print("Could not orient!")
+		print("Could not get orientation!")
 	end
 	return direction
+end
+
+local function orient(direction)
+	while getOrientation ~= direction do
+		turtle.turnLeft()
+	end
+end
+
+local function navigate(startX,startY,startZ)
+	local currX, currY, currZ = getPos()
+	
+	if currX ~= startX then
+		distance = currX - startX
+		while distance ~= 0 do
+
+
 end
 ---------------------------------------------------------------
 --
 -- Program Execution
 --
 
-savePos()
-orient()
+startX,startY,startZ = getPos()
+getOrientation()
+navigate(startPos)
+orient("positiveZ")

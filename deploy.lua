@@ -27,9 +27,12 @@ end
 
 local function orient()
 	local x,y,z = gps.locate()
+	print(x,y,z)
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
 	local x2,y2,z2 = gps.locate()
+	print(x2,y2,z2)
+	direction = "Undetermined"
 
 	if x2-x ~= 0 then
 		if x2-x <0 then direction = "posX"

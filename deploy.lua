@@ -41,35 +41,35 @@ local function orient()
 
 	if x2-x1 ~= 0 then
 		if x2 > 0 or x1 > 0 then
-			if x2-x1 <0 then direction = "posX"
-			else direction = "negX"
+			if x2-x1 <0 then direction = "positiveX"
+			else direction = "negativeX"
 			end
 		else
-			if x2-x1 <0 then direction = "negX"
-			else direction = "posX"
+			if x2-x1 <0 then direction = "negativeX"
+			else direction = "positiveX"
 			end
 		end
 
 	
 	elseif y2-y1 ~= 0 then
 		if y2 > 0 or y1 > 0 then
-			if y2-y1 <0 then direction = "posY"
-			else direction = "negY"
+			if y2-y1 <0 then direction = "positiveY"
+			else direction = "negativeY"
 			end
 		else
-			if y2-y1 <0 then direction = "negY"
-			else direction = "posY"
+			if y2-y1 <0 then direction = "negativeY"
+			else direction = "positiveY"
 			end
 		end
 
 	elseif z2-z1 ~= 0 then
 		if z2 > 0 or z1 > 0 then
-			if z2-z1 <0 then direction = "posZ"
-			else direction = "negZ"
+			if z2-z1 <0 then direction = "positiveZ"
+			else direction = "negativeZ"
 			end
 		else
-			if z2-z1 <0 then direction = "negZ"
-			else direction = "posZ"
+			if z2-z1 <0 then direction = "negativeZ"
+			else direction = "positiveZ"
 			end
 		end
 	end

@@ -30,15 +30,11 @@ end
 
 local function orient()
 	print("Orienting self!")
-	print("		Fetching reference coordinates")
-	print("-------------------------------------")
 	local x1,y1,z1 = savePos()
 	print("		Reference coordinates = " .. x1 .. y1 .. z1)
 
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
-	print("		Fetching updated coordinates")
-	print("-------------------------------------")
 	local x2,y2,z2 = savePos()
 	print("		Updated coordinates = " .. x2 .. y2 .. z2)
 	direction = "Undetermined"

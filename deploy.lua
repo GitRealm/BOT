@@ -22,7 +22,7 @@ local function savePos()
 	y = math.floor(y)
 	z = math.floor(z)
 	print(x,y,z)
-	return(x,y,z)
+	return x,y,z
 end
 
 local function navigate(x,y,z,direction)
@@ -36,19 +36,38 @@ local function orient()
 	local x2,y2,z2 = savePos()
 	direction = "Undetermined"
 
-	if x2-x ~= 0 then
-		if x2-x <0 then direction = "posX"
-		else direction = "negX"
+	if x2-x1 ~= 0 then
+		if x2 > 0 or x1 > 0 then
+			if x2-x1 <0 then direction = "posX"
+			else direction = "negX"
+			end
+		else
+			if x2-x1 <0 then direction = "negX"
+			else direction = "posX"
+			end
 		end
 
-	elseif y2-y ~= 0 then
-		if y2-y <0 then direction = "posY"
-		else direction = "negY"
+	
+	elseif y2-y1 ~= 0 then
+		if y2 > 0 or y1 > 0 then
+			if y2-y1 <0 then direction = "posY"
+			else direction = "negY"
+			end
+		else
+			if y2-y1 <0 then direction = "negY"
+			else direction = "posY"
+			end
 		end
 
-	elseif z2-z ~= 0 then
-		if z2-z <0 then direction = "posZ"
-		else direction = "negZ"
+	elseif z2-z1 ~= 0 then
+		if z2 > 0 or z1 > 0 then
+			if z2-z1 <0 then direction = "posZ"
+			else direction = "negZ"
+			end
+		else
+			if z2-z1 <0 then direction = "negZ"
+			else direction = "posZ"
+			end
 		end
 	end
 

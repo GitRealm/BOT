@@ -30,7 +30,7 @@ local function getOrientation()
 	--print("		Reference coordinates = " .. x1 .. " " ..  y1 .. " " ..  z1)
 
 	if turtle.detect() then turtle.dig() end
-	turtle.forward()
+	turtle.back()
 	local x2,y2,z2 = getPos()
 	--print("		Updated coordinates = " .. x2 .. " " .. y2 .. " " .. z2)
 	direction = "Undetermined"
@@ -57,7 +57,6 @@ local function getOrientation()
 	else
 		--print("Could not get orientation!")
 	end
-	turtle.back()
 	return direction
 end
 
@@ -206,6 +205,6 @@ end
 --
 
 local startX,startY,startZ = getPos()
-orient("positiveZ")
-navigate(startX,startY,startZ)
+navigate(0,237,5)
+--navigate(startX,startY,startZ)
 

@@ -29,7 +29,6 @@ local function getOrientation()
 	local x1,y1,z1 = getPos()
 	--print("		Reference coordinates = " .. x1 .. " " ..  y1 .. " " ..  z1)
 
-	if turtle.detect() then turtle.dig() end
 	turtle.back()
 	local x2,y2,z2 = getPos()
 	--print("		Updated coordinates = " .. x2 .. " " .. y2 .. " " .. z2)

@@ -119,7 +119,6 @@ local function navigate(startX,startY,startZ)
 					turtle.forward()
 				end
 				local currX, currY, currZ = getPos()
-				distance = distance - 1
 				print("		Heading towards negative X")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
@@ -132,7 +131,6 @@ local function navigate(startX,startY,startZ)
 					turtle.forward()
 				end
 				local currX, currY, currZ = getPos()
-				distance = distance - 1
 				print("		Heading towards positive X")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
@@ -150,7 +148,6 @@ local function navigate(startX,startY,startZ)
 					turtle.up()
 				end
 				local currX, currY, currZ = getPos()
-				distance = distance - 1
 				print("		Heading towards positive Y")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
@@ -162,7 +159,6 @@ local function navigate(startX,startY,startZ)
 					turtle.down()
 				end
 				local currX, currY, currZ = getPos()
-				distance = distance + 1
 				print("		Heading towards negative Y")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
@@ -181,7 +177,6 @@ local function navigate(startX,startY,startZ)
 					turtle.forward()
 				end
 				currX, currY, currZ = getPos()
-				currZ = currZ - 1
 				print("		Heading towards negative Z")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
@@ -194,7 +189,6 @@ local function navigate(startX,startY,startZ)
 					turtle.forward()
 				end
 				currX, currY, currZ = getPos()
-				distance = distance - 1
 				print("		Heading towards positive Z")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)

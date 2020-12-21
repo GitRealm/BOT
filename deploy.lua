@@ -86,7 +86,7 @@ local function orient(direction)
 			turtle.turnLeft()
 			turtle.turnLeft()
 		elseif currOrientation == "positiveX" then
-			turtle.turnLeft()
+			turtle.turnRight()
 		elseif currOrientation == "negativeX" then
 			turtle.turnRight()
 		end
@@ -120,7 +120,7 @@ local function navigate(startX,startY,startZ)
 					turtle.forward()
 				end
 				currX = currX - 1
-				print("		Current: " .. currZ .. " Goal: " .. startZ)
+				print("		Current: " .. currX .. " Goal: " .. startX)
 				sleep(2)
 			end
 		else 
@@ -132,7 +132,7 @@ local function navigate(startX,startY,startZ)
 					turtle.forward()
 				end
 				currX = currX + 1
-				print("		Current: " .. currZ .. " Goal: " .. startZ)
+				print("		Current: " .. currX .. " Goal: " .. startX)
 				sleep(2)
 			end
 		end
@@ -149,7 +149,7 @@ local function navigate(startX,startY,startZ)
 					turtle.up()
 				end
 				currY = currY + 1
-				print("		Current: " .. currZ .. " Goal: " .. startZ)
+				print("		Current: " .. currY .. " Goal: " .. startY)
 				sleep(2)
 			end
 		else 
@@ -160,7 +160,7 @@ local function navigate(startX,startY,startZ)
 					turtle.down()
 				end
 				currY = currY - 1
-				print("		Current: " .. currZ .. " Goal: " .. startZ)
+				print("		Current: " .. currY .. " Goal: " .. startY)
 				sleep(2)
 			end
 		end

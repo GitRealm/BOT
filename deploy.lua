@@ -189,7 +189,7 @@ local function navigate(startX,startY,startZ)
 					if turtle.detect() then turtle.dig() end
 					turtle.forward()
 				end
-				currZ = currZ - 1
+				currZ = currZ + 1
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end

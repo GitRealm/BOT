@@ -61,9 +61,44 @@ local function getOrientation()
 end
 
 local function orient(direction)
-	while getOrientation() ~= direction do
-		turtle.turnLeft()
-	end
+	currOrientation = getOrientation()
+	if direction == currOrientation then return end
+	if direction == "positiveX" then
+		if currOrientation == "negativeX" then
+			turtle.turnLeft()
+			turtle.turnLeft()
+		elseif currOrientation == "positiveZ" then
+			turtle.turnLeft()
+		elseif currOrientation == "negativeZ" then
+			turtle.turnRight()
+		end
+	elseif direction == "negativeX" then
+		if currOrientation == "positiveX" then
+			turtle.turnLeft()
+			turtle.turnLeft()
+		elseif currOrientation == "negativeZ" then
+			turtle.turnRight()
+		elseif currOrientation == "positiveZ" then
+			turtle.turnLeft()
+		end
+	elseif direction == "positiveZ" then
+		if currOrientation == "negativeZ" then
+			turtle.turnLeft()
+			turtle.turnLeft()
+		elseif currOrientation == "positiveX" then
+			turtle.turnLeft()
+		elseif currOrientation == "negativeX" then
+			turtle.turnRight()
+		end
+	elseif direction == "negativeZ" then
+		if currOrientation == "positiveZ" then
+			turtle.turnLeft()
+			turtle.turrnLeft()
+		elseif currOrientation == "negativeX" then
+			turtle.turnLeft()
+		elseif currOrientation == "positiveX" then
+			turtle.turnRight()
+		end
 end
 
 local function navigate(startX,startY,startZ)

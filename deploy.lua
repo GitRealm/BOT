@@ -177,7 +177,7 @@ local function navigate(startX,startY,startZ)
 					if turtle.detect() then turtle.dig() end
 					turtle.forward()
 				end
-				currX, currY, currZ = getPos()
+				local currX, currY, currZ = getPos()
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
@@ -189,7 +189,7 @@ local function navigate(startX,startY,startZ)
 					if turtle.detect() then turtle.dig() end
 					turtle.forward()
 				end
-				currX, currY, currZ = getPos()
+				local currX, currY, currZ = getPos()
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end

@@ -93,12 +93,13 @@ local function orient(direction)
 	elseif direction == "negativeZ" then
 		if currOrientation == "positiveZ" then
 			turtle.turnLeft()
-			turtle.turrnLeft()
+			turtle.turnLeft()
 		elseif currOrientation == "negativeX" then
 			turtle.turnLeft()
 		elseif currOrientation == "positiveX" then
 			turtle.turnRight()
 		end
+	end
 end
 
 local function navigate(startX,startY,startZ)
@@ -108,6 +109,7 @@ local function navigate(startX,startY,startZ)
 	print("Navigating to: " .. startX .. " " .. startY .. " " .. startZ)
 	
 	if currX ~= startX then
+		print("Aligning X coordinate")
 		distance = currX - startX
 		if distance > 0 then 
 			orient("negativeX") 
@@ -133,6 +135,7 @@ local function navigate(startX,startY,startZ)
 	end
 
 	if currY ~= startY then
+		print("Aligning Y coordinate")
 		distance = currY - startY
 		if distance > 0 then 
 			while currY ~= startY do
@@ -156,6 +159,7 @@ local function navigate(startX,startY,startZ)
 	end
 
 	if currZ ~= startZ then
+		print("Aligning Z coordinate")
 		distance = currZ - startZ
 		if distance > 0 then 
 			orient("negativeZ") 

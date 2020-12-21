@@ -120,7 +120,7 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currX .. "Start: " .. startX)
+				print("Distance: " .. distance .. " Current: " .. currX .. " Start: " .. startX)
 				sleep(2)
 			end
 		else 
@@ -132,7 +132,7 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currX .. "Start: " .. startX)
+				print("Distance: " .. distance .. " Current: " .. currX .. " Start: " .. startX)
 				sleep(2)
 			end
 		end
@@ -149,7 +149,7 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currY .. "Start: " .. startY)
+				print("Distance: " .. distance .. " Current: " .. currY .. " Start: " .. startY)
 				sleep(2)
 			end
 		else 
@@ -160,7 +160,7 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance + 1
-				print("Distance: " .. distance .. " Current: " .. currY .. "Start: " .. startY)
+				print("Distance: " .. distance .. " Current: " .. currY .. " Start: " .. startY)
 				sleep(2)
 			end
 		end
@@ -178,7 +178,7 @@ local function navigate(startX,startY,startZ)
 				end
 				currX, currY, currZ = getPos()
 				currZ = currZ - 1
-				print("Distance: " .. distance .. " Current: " .. currZ .. "Start: " .. startZ)
+				print("Distance: " .. distance .. " Current: " .. currZ .. " Start: " .. startZ)
 				sleep(2)
 			end
 		else 
@@ -190,7 +190,7 @@ local function navigate(startX,startY,startZ)
 				end
 				currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currZ .. "Start: " .. startZ)
+				print("Distance: " .. distance .. " Current: " .. currZ .. " Start: " .. startZ)
 				sleep(2)
 			end
 		end

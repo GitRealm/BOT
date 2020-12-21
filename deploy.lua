@@ -81,7 +81,8 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currX .. " " .. startX)
+				print("Distance: " .. distance .. " Current: " .. currX .. "Start: " .. startX)
+				sleep(2)
 			end
 		else 
 			orient("positiveX") 
@@ -90,7 +91,8 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currX .. " " .. startX)
+				print("Distance: " .. distance .. " Current: " .. currX .. "Start: " .. startX)
+				sleep(2)
 			end
 		end
 	end
@@ -103,7 +105,8 @@ local function navigate(startX,startY,startZ)
 				turtle.up()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currY .. " " .. startY)
+				print("Distance: " .. distance .. " Current: " .. currY .. "Start: " .. startY)
+				sleep(2)
 			end
 		else 
 			while currY ~= startY do
@@ -111,7 +114,8 @@ local function navigate(startX,startY,startZ)
 				turtle.up()
 				local currX, currY, currZ = getPos()
 				distance = distance + 1
-				print(distance .. " " .. currY .. " " .. startY)
+				print("Distance: " .. distance .. " Current: " .. currY .. "Start: " .. startY)
+				sleep(2)
 			end
 		end
 	end
@@ -123,18 +127,20 @@ local function navigate(startX,startY,startZ)
 			while currZ ~= startZ do
 				if turtle.detect() then turtle.dig() end
 				turtle.forward()
-				local currX, currY, currZ = getPos()
-				distance = distance - 1
-				print(distance .. " " .. currZ .. " " .. startZ)
+				--currX, currY, currZ = getPos()
+				currZ = currZ - 1
+				print("Distance: " .. distance .. " Current: " .. currZ .. "Start: " .. startZ)
+				sleep(2)
 			end
 		else 
 			orient("positiveZ") 
 			while currZ ~= startZ do
 				if turtle.detect() then turtle.dig() end
 				turtle.forward()
-				local currX, currY, currZ = getPos()
+				currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currZ .. " " .. startZ)
+				print("Distance: " .. distance .. " Current: " .. currZ .. "Start: " .. startZ)
+				sleep(2)
 			end
 		end
 	end

@@ -95,9 +95,9 @@ local function orient(direction)
 			turtle.turnLeft()
 			turtle.turnLeft()
 		elseif currOrientation == "negativeX" then
-			turtle.turnLeft()
-		elseif currOrientation == "positiveX" then
 			turtle.turnRight()
+		elseif currOrientation == "positiveX" then
+			turtle.turnLeft()
 		end
 	end
 end

@@ -34,8 +34,8 @@ local function getOrientation()
 	--print("		Updated coordinates = " .. x2 .. " " .. y2 .. " " .. z2)
 	direction = "Undetermined"
 
-	if x2-x1 ~= 0 then
-		if x2-x1 < 0 then direction = "negativeX"
+	if x1-x2 ~= 0 then
+		if x1-x2 < 0 then direction = "negativeX"
 		else direction = "positiveX"
 		end
 
@@ -115,7 +115,7 @@ local function navigate(startX,startY,startZ)
 			if distance > 0 then 
 				orient("negativeX") 
 				print("		Heading towards negative X")
-				while currX ~= startX - 1 do
+				while currX ~= startX do
 					if not turtle.forward() then
 						if turtle.detect() then turtle.dig() end
 						turtle.forward()
@@ -206,5 +206,5 @@ end
 
 local startX,startY,startZ = getPos()
 navigate(0,237,5)
---navigate(startX,startY,startZ)
+navigate(startX,startY,startZ)
 

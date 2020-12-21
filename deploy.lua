@@ -113,25 +113,25 @@ local function navigate(startX,startY,startZ)
 		distance = currX - startX
 		if distance > 0 then 
 			orient("negativeX") 
+			print("		Heading towards negative X")
 			while currX ~= startX do
 				if not turtle.forward() then
 					if turtle.detect() then turtle.dig() end
 					turtle.forward()
 				end
 				local currX, currY, currZ = getPos()
-				print("		Heading towards negative X")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		else 
 			orient("positiveX") 
+			print("		Heading towards positive X")
 			while currX ~= startX do
 				if not turtle.forward() then
 					if turtle.detect() then turtle.dig() end
 					turtle.forward()
 				end
 				local currX, currY, currZ = getPos()
-				print("		Heading towards positive X")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
@@ -142,24 +142,24 @@ local function navigate(startX,startY,startZ)
 		print("Aligning Y coordinate")
 		distance = currY - startY
 		if distance > 0 then 
+			print("		Heading towards positive Y")
 			while currY ~= startY do
 				if not turtle.up() then
 					if turtle.detectUp() then turtle.digUp() end
 					turtle.up()
 				end
 				local currX, currY, currZ = getPos()
-				print("		Heading towards positive Y")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		else 
+			print("		Heading towards negative Y")
 			while currY ~= startY do
 				if not turtle.down() then
 					if turtle.detectDown() then turtle.digDown() end
 					turtle.down()
 				end
 				local currX, currY, currZ = getPos()
-				print("		Heading towards negative Y")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
@@ -170,6 +170,7 @@ local function navigate(startX,startY,startZ)
 		print("Aligning Z coordinate")
 		distance = currZ - startZ
 		if distance > 0 then 
+			print("		Heading towards negative Z")
 			orient("negativeZ") 
 			while currZ ~= startZ do
 				if not turtle.forward() then
@@ -177,19 +178,18 @@ local function navigate(startX,startY,startZ)
 					turtle.forward()
 				end
 				currX, currY, currZ = getPos()
-				print("		Heading towards negative Z")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		else 
 			orient("positiveZ") 
+			print("		Heading towards positive Z")
 			while currZ ~= startZ do
 				if not turtle.forward() then
 					if turtle.detect() then turtle.dig() end
 					turtle.forward()
 				end
 				currX, currY, currZ = getPos()
-				print("		Heading towards positive Z")
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
@@ -203,7 +203,6 @@ end
 --
 
 local startX,startY,startZ = getPos()
-getOrientation()
 orient("positiveZ")
 navigate(startX,startY,startZ)
 

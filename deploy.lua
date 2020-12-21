@@ -120,7 +120,8 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currX .. " Start: " .. startX)
+				print("		Heading towards negative X")
+				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		else 
@@ -132,7 +133,8 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currX .. " Start: " .. startX)
+				print("		Heading towards positive X")
+				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		end
@@ -149,7 +151,8 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currY .. " Start: " .. startY)
+				print("		Heading towards positive Y")
+				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		else 
@@ -160,7 +163,8 @@ local function navigate(startX,startY,startZ)
 				end
 				local currX, currY, currZ = getPos()
 				distance = distance + 1
-				print("Distance: " .. distance .. " Current: " .. currY .. " Start: " .. startY)
+				print("		Heading towards negative Y")
+				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		end
@@ -178,7 +182,8 @@ local function navigate(startX,startY,startZ)
 				end
 				currX, currY, currZ = getPos()
 				currZ = currZ - 1
-				print("Distance: " .. distance .. " Current: " .. currZ .. " Start: " .. startZ)
+				print("		Heading towards negative Z")
+				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		else 
@@ -190,7 +195,8 @@ local function navigate(startX,startY,startZ)
 				end
 				currX, currY, currZ = getPos()
 				distance = distance - 1
-				print("Distance: " .. distance .. " Current: " .. currZ .. " Start: " .. startZ)
+				print("		Heading towards positive Z")
+				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				sleep(2)
 			end
 		end

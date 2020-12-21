@@ -81,7 +81,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currX .. " " startX)
+				print(distance .. " " .. currX .. " " .. startX)
 			end
 		else 
 			orient("negativeX") 
@@ -90,7 +90,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currX .. " " startX)
+				print(distance .. " " .. currX .. " " .. startX)
 			end
 		end
 	end
@@ -104,7 +104,7 @@ local function navigate(startX,startY,startZ)
 				turtle.up()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currY .. " " startY)
+				print(distance .. " " .. currY .. " " .. startY)
 			end
 		else 
 			orient("negativeY") 
@@ -113,7 +113,7 @@ local function navigate(startX,startY,startZ)
 				turtle.up()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currY .. " " startY)
+				print(distance .. " " .. currY .. " " .. startY)
 			end
 		end
 	end
@@ -127,7 +127,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currZ .. " " startZ)
+				print(distance .. " " .. currZ .. " " .. startZ)
 			end
 		else 
 			orient("negativeZ") 
@@ -136,7 +136,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
-				print(distance .. " " .. currZ .. " " startZ)
+				print(distance .. " " .. currZ .. " " .. startZ)
 			end
 		end
 	end

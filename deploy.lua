@@ -185,7 +185,7 @@ local function navigate(startX,startY,startZ)
 			orient("positiveZ") 
 			print("		Heading towards positive Z")
 			while currZ ~= startZ+1 do
-				currZ = currZ - 1
+				currZ = currZ + 1
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				if not turtle.forward() then
 					if turtle.detect() then turtle.dig() end

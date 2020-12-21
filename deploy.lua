@@ -75,7 +75,7 @@ local function navigate(startX,startY,startZ)
 	if currX ~= startX then
 		distance = currX - startX
 		if distance > 0 then 
-			orient("positiveX") 
+			orient("negativeX") 
 			while currX ~= startX do
 				if turtle.detect() then turtle.dig() end
 				turtle.forward()
@@ -84,7 +84,7 @@ local function navigate(startX,startY,startZ)
 				print(distance .. " " .. currX .. " " .. startX)
 			end
 		else 
-			orient("negativeX") 
+			orient("positiveX") 
 			while currX ~= startX do
 				if turtle.detect() then turtle.dig() end
 				turtle.forward()
@@ -98,7 +98,7 @@ local function navigate(startX,startY,startZ)
 	if currY ~= startY then
 		distance = currY - startY
 		if distance > 0 then 
-			orient("positiveY") 
+			orient("negativeY") 
 			while currY ~= startY do
 				if turtle.detectUp() then turtle.digUp() end
 				turtle.up()
@@ -107,7 +107,7 @@ local function navigate(startX,startY,startZ)
 				print(distance .. " " .. currY .. " " .. startY)
 			end
 		else 
-			orient("negativeY") 
+			orient("positiveY") 
 			while currY ~= startY do
 				if turtle.detectUp() then turtle.digUp() end
 				turtle.up()
@@ -121,7 +121,7 @@ local function navigate(startX,startY,startZ)
 	if currZ ~= startZ then
 		distance = currZ - startZ
 		if distance > 0 then 
-			orient("positiveZ") 
+			orient("negativeZ") 
 			while currZ ~= startZ do
 				if turtle.detect() then turtle.dig() end
 				turtle.forward()
@@ -130,7 +130,7 @@ local function navigate(startX,startY,startZ)
 				print(distance .. " " .. currZ .. " " .. startZ)
 			end
 		else 
-			orient("negativeZ") 
+			orient("positiveZ") 
 			while currZ ~= startZ do
 				if turtle.detect() then turtle.dig() end
 				turtle.forward()

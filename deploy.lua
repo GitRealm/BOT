@@ -77,9 +77,9 @@ local function orient(direction)
 			turtle.turnLeft()
 			turtle.turnLeft()
 		elseif currOrientation == "negativeZ" then
-			turtle.turnRight()
-		elseif currOrientation == "positiveZ" then
 			turtle.turnLeft()
+		elseif currOrientation == "positiveZ" then
+			turtle.turnRight()
 		end
 	elseif direction == "positiveZ" then
 		if currOrientation == "negativeZ" then
@@ -184,7 +184,7 @@ local function navigate(startX,startY,startZ)
 		else 
 			orient("positiveZ") 
 			print("		Heading towards positive Z")
-			while currZ ~= startZ+1 do
+			while currZ ~= startZ do
 				currZ = currZ + 1
 				print("		Current: " .. currZ .. " Goal: " .. startZ)
 				if not turtle.forward() then

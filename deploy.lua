@@ -57,6 +57,7 @@ local function getOrientation()
 	else
 		--print("Could not get orientation!")
 	end
+	turtle.forward()
 	return direction
 end
 

@@ -44,8 +44,8 @@ local function getOrientation()
 		else direction = "positiveY"
 		end
 
-	elseif z2-z1 ~= 0 then
-		if z2-z1 < 0 then direction = "negativeZ"
+	elseif z1-z2 ~= 0 then
+		if z1-z2 < 0 then direction = "negativeZ"
 		else direction = "positiveZ"
 		end
 	end

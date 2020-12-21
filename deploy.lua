@@ -144,8 +144,8 @@ local function navigate(destX,destY,destZ)
 		if currY ~= destY then
 			print("Aligning Y coordinate")
 			distance = currY - destY 
-			if distance > 0 then 
-				print("		Heading towards positive Y")
+			if distance < 0 then 
+				print("		Heading towards Y")
 				while currY ~= destY do
 					if not turtle.up() then
 						if turtle.detectUp() then turtle.digUp() end

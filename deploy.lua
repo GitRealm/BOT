@@ -109,7 +109,7 @@ local function navigate(startX,startY,startZ)
 	print("Current coordinates: " .. currX .. " " .. currY .. " " .. currZ)
 	print("Navigating to: " .. startX .. " " .. startY .. " " .. startZ)
 
-	while currX ~= startX and currY ~= startY and currZ ~= startZ do
+	while currX ~= startX or currY ~= startY or currZ ~= startZ do
 		if currX ~= startX then
 			print("Aligning X coordinate")
 			distance = currX - startX

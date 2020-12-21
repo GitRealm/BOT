@@ -4,7 +4,11 @@
 --
 ---------------------------------------------------------------
 --
---
+-- calculate(chunks)		divides $chunks by 4, returns numTurtles
+-- getPos()			returns current x,y,z coordinates
+-- getOrientation()		returns current orientation
+-- orient(direction)		orients turtle to $direction
+-- navigate(destX,destY,destZ)  moves turtle to $destX, $destY, $destZ
 --
 ---------------------------------------------------------------
 --
@@ -102,92 +106,92 @@ local function orient(direction)
 	end
 end
 
-local function navigate(startX,startY,startZ)
+local function navigate(destX,destY,destZ)
 	local currX, currY, currZ = getPos()
 	
 	print("Current coordinates: " .. currX .. " " .. currY .. " " .. currZ)
-	print("Navigating to: " .. startX .. " " .. startY .. " " .. startZ)
+	print("Navigating to: " .. destX.. " " .. destY.. " " .. destZ)
 
-	while currX ~= startX or currY ~= startY or currZ ~= startZ do
-		if currX ~= startX then
+	while currX ~= destX or currY ~= destY or currZ ~= destZ do
+		if currX ~= destX then
 			print("Aligning X coordinate")
-			distance = currX - startX
+			distance = currX - destX 
 			if distance > 0 then 
 				orient("negativeX") 
 				print("		Heading towards negative X")
-				while currX ~= startX do
+				while currX ~= destX do
 					if not turtle.forward() then
 						if turtle.detect() then turtle.dig() end
 						turtle.forward()
 					end
 					currX = currX - 1
-					print("		Current: " .. currX .. " Goal: " .. startX)
+					print("		Current: " .. currX .. " Dest: " .. destX)
 					sleep(2)
 				end
 			else 
 				orient("positiveX") 
 				print("		Heading towards positive X")
-				while currX ~= startX do
+				while currX ~= destX do
 					if not turtle.forward() then
 						if turtle.detect() then turtle.dig() end
 						turtle.forward()
 					end
 					currX = currX + 1
-					print("		Current: " .. currX .. " Goal: " .. startX)
+					print("		Current: " .. currX .. " Dest: " .. destX)
 					sleep(2)
 				end
 			end
 		end
 
-		if currY ~= startY then
+		if currY ~= destY then
 			print("Aligning Y coordinate")
-			distance = currY - startY
+			distance = currY - destY 
 			if distance > 0 then 
 				print("		Heading towards positive Y")
-				while currY ~= startY do
+				while currY ~= destY do
 					if not turtle.up() then
 						if turtle.detectUp() then turtle.digUp() end
 						turtle.up()
 					end
 					currY = currY + 1
-					print("		Current: " .. currY .. " Goal: " .. startY)
+					print("		Current: " .. currY .. " Dest: " .. destY)
 					sleep(2)
 				end
 			else 
 				print("		Heading towards negative Y")
-				while currY ~= startY do
+				while currY ~= destY do
 					if not turtle.down() then
 						if turtle.detectDown() then turtle.digDown() end
 						turtle.down()
 					end
 					currY = currY - 1
-					print("		Current: " .. currY .. " Goal: " .. startY)
+					print("		Current: " .. currY .. " Dest: " .. destY)
 					sleep(2)
 				end
 			end
 		end
 
-		if currZ ~= startZ then
+		if currZ ~= destZ then
 			print("Aligning Z coordinate")
-			distance = currZ - startZ
+			distance = currZ - destZ 
 			if distance > 0 then 
 				print("		Heading towards negative Z")
 				orient("negativeZ") 
-				while currZ ~= startZ do
+				while currZ ~= destZ do
 					if not turtle.forward() then
 						if turtle.detect() then turtle.dig() end
 						turtle.forward()
 					end
 					currZ = currZ - 1
-					print("		Current: " .. currZ .. " Goal: " .. startZ)
+					print("		Current: " .. currZ .. " Dest: " .. destZ)
 					sleep(2)
 				end
 			else 
 				orient("positiveZ") 
 				print("		Heading towards positive Z")
-				while currZ ~= startZ do
+				while currZ ~= destZ do
 					currZ = currZ + 1
-					print("		Current: " .. currZ .. " Goal: " .. startZ)
+					print("		Current: " .. currZ .. " Goal: " .. destZ)
 					if not turtle.forward() then
 						if turtle.detect() then turtle.dig() end
 						turtle.forward()

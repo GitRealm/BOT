@@ -25,14 +25,14 @@ local function getPos()
 end
 
 local function getOrientation()
-	print("Trying to get orientation!")
+	--print("Trying to get orientation!")
 	local x1,y1,z1 = getPos()
-	print("		Reference coordinates = " .. x1 .. " " ..  y1 .. " " ..  z1)
+	--print("		Reference coordinates = " .. x1 .. " " ..  y1 .. " " ..  z1)
 
 	if turtle.detect() then turtle.dig() end
 	turtle.forward()
 	local x2,y2,z2 = getPos()
-	print("		Updated coordinates = " .. x2 .. " " .. y2 .. " " .. z2)
+	--print("		Updated coordinates = " .. x2 .. " " .. y2 .. " " .. z2)
 	direction = "Undetermined"
 
 	if x2-x1 ~= 0 then
@@ -52,10 +52,10 @@ local function getOrientation()
 	end
 
 	if direction ~= "Undetermined" then
-		print("		Direction determined!")
-		print("Currently facing " .. direction)
+		--print("		Direction determined!")
+		--print("Currently facing " .. direction)
 	else
-		print("Could not get orientation!")
+		--print("Could not get orientation!")
 	end
 	return direction
 end
@@ -81,6 +81,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
+				print(distance .. " " .. currX .. " " startX)
 			end
 		else 
 			orient("negativeX") 
@@ -89,6 +90,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
+				print(distance .. " " .. currX .. " " startX)
 			end
 		end
 	end
@@ -102,6 +104,7 @@ local function navigate(startX,startY,startZ)
 				turtle.up()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
+				print(distance .. " " .. currY .. " " startY)
 			end
 		else 
 			orient("negativeY") 
@@ -110,6 +113,7 @@ local function navigate(startX,startY,startZ)
 				turtle.up()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
+				print(distance .. " " .. currY .. " " startY)
 			end
 		end
 	end
@@ -123,6 +127,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
+				print(distance .. " " .. currZ .. " " startZ)
 			end
 		else 
 			orient("negativeZ") 
@@ -131,6 +136,7 @@ local function navigate(startX,startY,startZ)
 				turtle.forward()
 				local currX, currY, currZ = getPos()
 				distance = distance - 1
+				print(distance .. " " .. currZ .. " " startZ)
 			end
 		end
 	end

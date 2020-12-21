@@ -126,7 +126,6 @@ local function navigate(destX,destY,destZ)
 					end
 					currX = currX - 1
 					print("		Current: " .. currX .. " Dest: " .. destX)
-					sleep(2)
 				end
 			else 
 				orient("positiveX") 
@@ -138,7 +137,6 @@ local function navigate(destX,destY,destZ)
 					end
 					currX = currX + 1
 					print("		Current: " .. currX .. " Dest: " .. destX)
-					sleep(2)
 				end
 			end
 		end
@@ -155,7 +153,6 @@ local function navigate(destX,destY,destZ)
 					end
 					currY = currY + 1
 					print("		Current: " .. currY .. " Dest: " .. destY)
-					sleep(2)
 				end
 			else 
 				print("		Heading towards negative Y")
@@ -166,7 +163,6 @@ local function navigate(destX,destY,destZ)
 					end
 					currY = currY - 1
 					print("		Current: " .. currY .. " Dest: " .. destY)
-					sleep(2)
 				end
 			end
 		end
@@ -184,7 +180,6 @@ local function navigate(destX,destY,destZ)
 					end
 					currZ = currZ - 1
 					print("		Current: " .. currZ .. " Dest: " .. destZ)
-					sleep(2)
 				end
 			else 
 				orient("positiveZ") 
@@ -196,7 +191,6 @@ local function navigate(destX,destY,destZ)
 						if turtle.detect() then turtle.dig() end
 						turtle.forward()
 					end
-					sleep(2)
 				end
 			end
 		end

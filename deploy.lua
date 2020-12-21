@@ -77,9 +77,9 @@ local function orient(direction)
 			turtle.turnLeft()
 			turtle.turnLeft()
 		elseif currOrientation == "negativeZ" then
-			turtle.turnRight()
-		elseif currOrientation == "positiveZ" then
 			turtle.turnLeft()
+		elseif currOrientation == "positiveZ" then
+			turtle.turnRight()
 		end
 	elseif direction == "positiveZ" then
 		if currOrientation == "negativeZ" then

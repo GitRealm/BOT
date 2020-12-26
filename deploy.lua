@@ -197,11 +197,15 @@ local function navigate(destX,destY,destZ)
 	end
 
 end
+
+function navHome()
+	navigate(startX,startY,startZ)
+end
 ---------------------------------------------------------------
 --
 -- Program Execution
 --
-local startX,startY,startZ = getPos()
+startX,startY,startZ = getPos()
 --navigate(startX,startY,startZ)
 --
 ---------------------------------------------------------------

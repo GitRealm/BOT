@@ -1,10 +1,9 @@
---
--- deploy.lua
--- Automated deployment of turtles
+
+-- navigate.lua
+-- Navigation of X,Y,Z planes for turtles
 --
 ---------------------------------------------------------------
 --
--- calculate(chunks)		divides $chunks by 4, returns numTurtles
 -- getPos()			returns current x,y,z coordinates
 -- getOrientation()		returns current orientation
 -- orient(direction)		orients turtle to $direction
@@ -15,12 +14,7 @@
 -- Functions
 --
 
-local function calculate(chunks)
-	local numTurtles = chunks/4
-	return numTurtles
-end
-
-local function getPos()
+function getPos()
 	local x,y,z = gps.locate()
 	x = math.floor(x)
 	y = math.floor(y)
@@ -28,7 +22,7 @@ local function getPos()
 	return x,y,z
 end
 
-local function getOrientation()
+function getOrientation()
 	--print("Trying to get orientation!")
 	local x1,y1,z1 = getPos()
 	--print("		Reference coordinates = " .. x1 .. " " ..  y1 .. " " ..  z1)
@@ -64,7 +58,7 @@ local function getOrientation()
 	return direction
 end
 
-local function orient(direction)
+function orient(direction)
 	currOrientation = getOrientation()
 	if direction == currOrientation then return end
 	if direction == "positiveX" then
@@ -106,7 +100,7 @@ local function orient(direction)
 	end
 end
 
-local function navigate(destX,destY,destZ)
+function navigate(destX,destY,destZ)
 	local currX, currY, currZ = getPos()
 	
 	print("Current coordinates: " .. currX .. " " .. currY .. " " .. currZ)

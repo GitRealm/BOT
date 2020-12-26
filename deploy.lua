@@ -41,3 +41,5 @@ local function deployTurtles()
 		turtle.turnRight()
 	end
 end
+
+deployTurtles()

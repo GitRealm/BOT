@@ -22,8 +22,18 @@ local function calcTurtles(numChunks)
 end
 
 local function deployTurtles()
+	local startingOrientation = getOrientation()
 	for a=1, 4, 1 do
-		turtle.place()
+		currentOrientation = getOrientation()
+		if turtle.detectUp() then turtle.digUp() end
+		turtle.up()
+		orient(startingOrientation)
+		turtle.placeDown()
+		orient(currentOrientation)
+		if turtle.detect() then turtle.dig() end
+		turtle.forward()
+		if turtle.detectDown() then turtle.digDown() end
+		turtle.down()
 		for i=1, 8, 1 do
 			if turtle.detect then turtle.dig() end
 			turtle.forward()

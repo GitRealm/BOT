@@ -203,9 +203,9 @@ end
 --
 
 local startX,startY,startZ = getPos()
-navigate(0,237,5)
-navigate(-4,237,5)
-navigate(-4,237,1)
-navigate(0,237,1)
+navigate(0,238,5)
+navigate(-4,238,5)
+navigate(-4,238,1)
+navigate(0,238,1)
 navigate(startX,startY,startZ)
 

@@ -201,11 +201,7 @@ end
 --
 -- Program Execution
 --
-
 local startX,startY,startZ = getPos()
-navigate(0,238,5)
-navigate(-4,238,5)
-navigate(-4,238,1)
-navigate(0,238,1)
-navigate(startX,startY,startZ)
-
+--navigate(startX,startY,startZ)
+--
+---------------------------------------------------------------

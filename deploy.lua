@@ -35,9 +35,9 @@ local function deployTurtles()
 		if turtle.detectDown() then turtle.digDown() end
 		turtle.down()
 		for i=1, 8, 1 do
-			if a=4 and i=7 then break end
 			if turtle.detect then turtle.dig() end
 			turtle.forward()
+			if a=4 and i=7 then break end
 		end
 		turtle.turnRight()
 	end

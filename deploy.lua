@@ -29,6 +29,7 @@ local function deployTurtles()
 		turtle.up()
 		orient(startingOrientation)
 		turtle.placeDown()
+		turtle.select(turtle.getSelectedSlot()+1)
 		orient(currentOrientation)
 		if turtle.detect() then turtle.dig() end
 		turtle.forward()

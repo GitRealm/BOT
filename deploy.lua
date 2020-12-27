@@ -24,7 +24,7 @@ end
 local function deployTurtles()
 	local startingOrientation = getOrientation()
 	for a=1, 4, 1 do
-		currentOrientation = getOrientation()
+		local currentOrientation = getOrientation()
 		if turtle.detectUp() then turtle.digUp() end
 		turtle.up()
 		orient(startingOrientation)
@@ -35,6 +35,7 @@ local function deployTurtles()
 		if turtle.detectDown() then turtle.digDown() end
 		turtle.down()
 		for i=1, 8, 1 do
+			if a=4 and i=7 then break end
 			if turtle.detect then turtle.dig() end
 			turtle.forward()
 		end
@@ -43,3 +44,4 @@ local function deployTurtles()
 end
 
 deployTurtles()
+turtle.back()
